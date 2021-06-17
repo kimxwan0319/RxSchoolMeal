@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.author           = { 'semicolondsmkr' => 'kimxwan0319@naver.com' }
   spec.source           = { :git => 'https://github.com/kimxwan0319/RxSchoolMeal.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = '13.0'
-  spec.source_files = 'RxDSMSDK/Classes/**/*'
+  spec.source_files = 'RxSchoolMeal/Classes/**/*'
   spec.public_header_files = 'Pod/Classes/**/*.h'
 
   spec.dependency 'RxAlamofire', '~> 6.1'
