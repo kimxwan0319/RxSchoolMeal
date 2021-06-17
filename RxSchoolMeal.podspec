@@ -8,7 +8,8 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'RxSchoolMeal'
-  spec.version          = ENV['LIB_VERSION']
+  #spec.version          = ENV['LIB_VERSION']
+  spec.version          = '0.1.0'
   spec.summary          = 'RxLibrary for get school meal'
   spec.description      = 'This is awsome library for get school meal with RxSwift'
   spec.homepage         = 'https://github.com/kimxwan0319/RxSchoolMeal'
@@ -17,7 +18,9 @@ Pod::Spec.new do |spec|
   spec.author           = { 'semicolondsmkr' => 'kimxwan0319@naver.com' }
   spec.source           = { :git => 'https://github.com/kimxwan0319/RxSchoolMeal.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = '13.0'
-  spec.source_files  = 'Classes/*.{h,m}'
+  
+  spec.source_files  = 'RxSchoolMeal/Classes/**/*'
+  spec.exclude_files = 'Example'
 
   spec.dependency 'RxAlamofire', '~> 6.1'
   spec.dependency 'RxSwift', '~> 6.0'
