@@ -3,20 +3,18 @@
 name: main
 
 on:
-    push:
-        tags:
-        - "*.*.*"
+  push:
+    tags:
+        - '*'
 
 jobs:
-    build:
+  build:
     
     runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: "2.x"
+    
     - name: Install Cocoapods
         run: gem install cocoapods
     
@@ -27,4 +25,4 @@ jobs:
         pod lib lint --allow-warnings
         pod trunk push --allow-warnings
         env:
-            COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
