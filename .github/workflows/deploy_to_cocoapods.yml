@@ -2,6 +2,11 @@
 
 name: deploy_to_cocoapods
 
+on:
+  push:
+    tags:
+      - *.*.*
+
 jobs:
   build:
   runs-on: macOS-latest
