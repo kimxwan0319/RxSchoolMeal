@@ -17,13 +17,13 @@ jobs:
       with:
         ruby-version: '2.6'
     - name: Install Cocoapods
-        run: gem install cocoapods
+      run: gem install cocoapods
     
     - name: Deploy to Cocoapods
-        run: |
-        set -eo pipefail
-        export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
-        pod lib lint --allow-warnings
-        pod trunk push --allow-warnings
-        env:
+      run: |
+      set -eo pipefail
+      export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
+      pod lib lint --allow-warnings
+      pod trunk push --allow-warnings
+      env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
