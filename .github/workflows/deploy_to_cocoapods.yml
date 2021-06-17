@@ -3,18 +3,18 @@
 name: deploy_to_cocoapods
 
 on:
-  push:
-    tags:
-      - *.*.*
+    push:
+        tags:
+        - *.*.*
 
 jobs:
-  build:
-  runs-on: macOS-latest
+    build:
+    runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v1
     - name: Publish to CocoaPod register
-      env:
+        env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-      run: |
+        run: |
         pod trunk push RxSchoolMeal.podspec
