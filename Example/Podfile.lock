@@ -1,0 +1,16 @@
+PODS:
+  - RxSchoolMeal (0.1.0)
+
+DEPENDENCIES:
+  - RxSchoolMeal (from `../`)
+
+EXTERNAL SOURCES:
+  RxSchoolMeal:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RxSchoolMeal: d7561bd23159d77797cb619de4f3be56c521b320
+
+PODFILE CHECKSUM: f439ed84fce876cacedf44d2365120328b57d269
+
+COCOAPODS: 1.10.1
