@@ -5,6 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "RxSchoolMeal",
+    platforms: [
+        .iOS(.v12),
+        .macOS(.v10_12),
+        .watchOS(.v6)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
