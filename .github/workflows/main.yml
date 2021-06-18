@@ -34,7 +34,7 @@ jobs:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
     - name: Upload Codecov report
       run: |
-        xcrun llvm-cov export -format="lcov" .build/debug/SwiftLoggerPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
+        xcrun llvm-cov export -format="lcov" .build/debug/RxSchoolMealPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
         bash <(curl -s https://codecov.io/bash) -J 'RxSchoolMeal'
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
