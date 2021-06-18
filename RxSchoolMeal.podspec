@@ -19,8 +19,7 @@ Pod::Spec.new do |spec|
   spec.source           = { :git => 'https://github.com/kimxwan0319/RxSchoolMeal.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = '13.0'
   
-  spec.source_files  = 'Source/RxSchoolMeal/**/*', 'Source/RxSchoolMeal/*'
-  spec.exclude_files = 'Example'
+  spec.source_files  = 'Sources/RxSchoolMeal/**/*', 'Sources/RxSchoolMeal/*'
 
   spec.dependency 'RxAlamofire', '~> 6.1'
   spec.dependency 'RxSwift', '~> 6.0'
