@@ -8,8 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'RxSchoolMeal'
-  #spec.version          = ENV['LIB_VERSION']
-  spec.version          = '0.1.2'
+  spec.version          = ENV['LIB_VERSION']
   spec.summary          = 'RxLibrary for get school meal'
   spec.description      = 'This is awsome library for get school meal with RxSwift'
   spec.homepage         = 'https://github.com/kimxwan0319/RxSchoolMeal'
