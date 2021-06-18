@@ -34,7 +34,6 @@ jobs:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
     - name: Upload Codecov report
       run: |
-        bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
         bash <(curl -s https://codecov.io/bash) -J 'RxSchoolMeal'
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
