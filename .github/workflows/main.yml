@@ -18,7 +18,10 @@ jobs:
         ruby-version: '2.6'
     - name: Install Cocoapods
       run: gem install cocoapods
-    
+    - name: build and test
+      run: |
+        swift run
+        swift test
     - name: Deploy to Cocoapods
       run: |
         set -eo pipefail
