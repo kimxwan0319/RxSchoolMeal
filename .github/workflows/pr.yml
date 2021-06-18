@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: pr
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: swift build
+    - name: test
+      run: swift test
