@@ -34,7 +34,7 @@ jobs:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
     - name: Upload Codecov report
       run: |
-        xcodebuild -scheme SwiftExample -workspace SwiftExample.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' build test
+        xcodebuild -scheme SwiftExample -workspace RxSchoolMeal.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=12' build test
         bash <(curl -s https://codecov.io/bash) -J 'RxSchoolMeal'
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
