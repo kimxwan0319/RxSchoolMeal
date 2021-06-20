@@ -3,10 +3,10 @@ import RxSwift
 import Alamofire
 import RxAlamofire
 
-class HTTPClient {
-    static let shared = HTTPClient()
+internal class HTTPClient {
+    internal static let shared = HTTPClient()
 
-    func networking<T: Codable>(_ api: SchoolMealAPI, _ networkModel: T.Type) -> Single<T> {
+    internal func networking<T: Codable>(_ api: SchoolMealAPI, _ networkModel: T.Type) -> Single<T> {
         requestData(api.method, api.uri,
                     parameters: api.parameters,
                     encoding: api.encoding,

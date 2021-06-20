@@ -1,6 +1,6 @@
 import Foundation
 
-enum StatusCode: Error {
+internal enum StatusCode: Error {
     case OK                  // 200; 성공
     case badRequest          // 400; 올바르지 않은 요청
     case unauthorized        // 401; 토큰 인증 실패

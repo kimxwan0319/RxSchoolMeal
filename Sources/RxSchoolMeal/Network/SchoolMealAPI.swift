@@ -1,7 +1,7 @@
 import Foundation
 import Alamofire
 
-enum SchoolMealAPI {
+internal enum SchoolMealAPI {
     case getSchoolInfo(schoolName: String)
     case getMeal(date: MealDate)
 }
