@@ -13,6 +13,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+      with:
+        fetch-depth: 2
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
@@ -21,7 +23,7 @@ jobs:
     - name: build and test
       run: |
         swift run
-        swift test
+        swift test --enable-code-coverage
     - name: Deploy to Cocoapods
       run: |
         set -eo pipefail
@@ -30,3 +32,9 @@ jobs:
         pod trunk push --allow-warnings
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+    - name: Upload Codecov report
+            uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
+        fail_ci_if_error: true
