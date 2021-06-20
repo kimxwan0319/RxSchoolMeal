@@ -1,7 +1,7 @@
 import Foundation
 
 public struct MealModel: Codable {
-    public let ATPT_OFCDC_SC_CODE: String
-    public let SD_SCHUL_CODE: String
-    public let SCHUL_NM: String
+    public let breakfast: [String]
+    public let lunch: [String]
+    public let dinner: [String]
 }
