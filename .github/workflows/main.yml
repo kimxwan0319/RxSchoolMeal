@@ -36,5 +36,5 @@ jobs:
             uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: swift test --show-codecov-path
+        file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
         fail_ci_if_error: true
