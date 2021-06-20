@@ -1,8 +1,8 @@
 import Foundation
 
-enum MealDate {
+public enum MealDate {
     case today
-    case otherDay(date: Date)
+    case anotherDate(date: Date)
     case plusMinusDay(day: Int)
 }
 
@@ -14,7 +14,7 @@ extension MealDate {
         switch self {
         case .today:
             return formatter.string(from: Date())
-        case .otherDay(let date):
+        case .anotherDate(let date):
             return formatter.string(from: date)
         case .plusMinusDay(let day):
             var date = Date()
