@@ -8,7 +8,7 @@ internal enum SchoolMealAPI {
 
 extension SchoolMealAPI {
     public var uri: String {
-        let baseUrl = "http://http://211.38.86.92:3004"
+        let baseUrl = "http://211.38.86.92:3004"
         return baseUrl + path
     }
 
