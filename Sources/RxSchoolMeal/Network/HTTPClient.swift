@@ -6,7 +6,7 @@ import RxAlamofire
 class HTTPClient {
     static let shared = HTTPClient()
 
-    func networking<T: Codable>(_ api: GSPASSAPI, _ networkModel: T.Type) -> Single<T> {
+    func networking<T: Codable>(_ api: SchoolMealAPI, _ networkModel: T.Type) -> Single<T> {
         requestData(api.method, api.uri,
                     parameters: api.parameters,
                     encoding: api.encoding,
