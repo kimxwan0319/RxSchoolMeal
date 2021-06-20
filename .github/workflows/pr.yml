@@ -15,10 +15,12 @@ jobs:
     - name: build
       run: swift build
     - name: test
-      run: swift test --enable-code-coverage
+      run: |
+        swift test --enable-code-coverage
+        echo 'swift test --show-codecov-path'
     - name: Upload Codecov report
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        directory: swift test --show-codecov-path
+        file: swift test --show-codecov-path
         fail_ci_if_error: true
