@@ -15,7 +15,7 @@ jobs:
     - name: build
       run: swift build
     - name: test
-      run: swift test -enableCodeCoverage YES -derivedDataPath .build/derivedData
+      run: swift test --enable-code-coverage -derivedDataPath .build/derivedData
     - name: Upload Codecov report
       run: bash <(curl -s https://codecov.io/bash) -D .build/derivedData
       env:

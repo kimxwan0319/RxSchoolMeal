@@ -23,7 +23,7 @@ jobs:
     - name: build and test
       run: |
         swift run
-        swift test -enableCodeCoverage YES -derivedDataPath .build/derivedData
+        swift test --enable-code-coverage -derivedDataPath .build/derivedData
     - name: Deploy to Cocoapods
       run: |
         set -eo pipefail
