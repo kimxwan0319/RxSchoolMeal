@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![License](https://img.shields.io/cocoapods/l/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![Platform](https://img.shields.io/cocoapods/p/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
+[![codecov](https://codecov.io/gh/kimxwan0319/RxSchoolMeal/branch/main/graph/badge.svg?token=KAWST1E1TU)](https://codecov.io/gh/kimxwan0319/RxSchoolMeal)
 
 ## Example
 
