@@ -6,6 +6,12 @@ final class SchoolMealAPITests: XCTestCase {
 
     var disposeBag = DisposeBag()
 
+    override func setUpWithError() throws {
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue("G10", forKey: "ATPT-OFCDC-SC-CODE")
+        userDefaults.setValue("7430310", forKey: "SD_SCHUL_CODE")
+    }
+    
     override func tearDownWithError() throws {
         disposeBag = DisposeBag()
     }
