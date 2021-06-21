@@ -22,7 +22,7 @@ jobs:
       run: gem install cocoapods
     - name: build and test
       run: |
-        swift run
+        swift build
         swift test --enable-code-coverage
     - name: Deploy to Cocoapods
       run: |
