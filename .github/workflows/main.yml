@@ -37,6 +37,6 @@ jobs:
     - name: Upload Codecov report
       run: |
         bundle exec slather
-        bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
+        bash <(curl -s https://codecov.io/bash) -f xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
