@@ -16,7 +16,7 @@ jobs:
       run: swift build
     - name: path check
       run: |
-        cd ./swiftpm/xcode
+        cd .swiftpm/xcode
         ls
     - name: test
       run: |
