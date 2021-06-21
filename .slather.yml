@@ -1,6 +1,6 @@
 coverage_service: cobertura_xml
 xcodeproj: ./RxSchoolMeal.xcodeproj/
-scheme: RxSchoolMeal-Package
+scheme: RxSchoolMeal
 source_directory: Sources/RxSchoolMeal/
 output_directory: xml_report/
 profdata_coverage_dir: .build/x86_64-apple-macosx/debug/codecov/
