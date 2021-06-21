@@ -35,8 +35,7 @@ jobs:
     - name: Deploy to SPM
       run: swift package generate-xcodeproj
     - name: Upload Codecov report
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
-        fail_ci_if_error: true
+      run: |
+        bundle exec slather
+        bash <(curl -s https://codecov.io/bash) -f path/to/xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
+      env: CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
