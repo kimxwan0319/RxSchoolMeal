@@ -39,7 +39,6 @@ Carthage/Build
 #SPM
 /.build
 /Packages
-/*.xcodeproj
 xcuserdata/
 DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
