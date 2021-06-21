@@ -47,8 +47,11 @@ extension SchoolMealAPI {
         switch self {
         case .getSchoolInfo(let schoolName):
             return "/school?SCHUL_NM=\(encodingQuery(query: schoolName))"
-        case .getMeal:
-            return "/meal"
+        case .getMeal(let mealDate):
+            return "/meal" +
+                "?MLSV_YMD=\(mealDate.dateString())" +
+                "&SD_SCHUL_CODE=\(schoolInfo.SD_SCHUL_CODE)" +
+                "&ATPT_OFCDC_SC_CODE=\(schoolInfo.ATPT_OFCDC_SC_CODE)"
         }
     }
 
