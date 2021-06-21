@@ -20,7 +20,7 @@ jobs:
     - name: Upload Codecov report
       run: |
         gem install slather
-        bundle exec slather
+        slather
         bash <(curl -s https://codecov.io/bash) -f xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
