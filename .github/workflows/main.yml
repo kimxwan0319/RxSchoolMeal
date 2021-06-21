@@ -32,8 +32,10 @@ jobs:
         pod trunk push --allow-warnings
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+    - name: Deploy to SPM
+      run: swift package generate-xcodeproj
     - name: Upload Codecov report
-            uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
