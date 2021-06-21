@@ -33,7 +33,7 @@ jobs:
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
     - name: Upload Codecov report
-            uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
