@@ -36,8 +36,7 @@ jobs:
       run: swift package generate-xcodeproj
     - name: Upload Codecov report
       run: |
-        bundle config path vendor/bundle
-        bundle install --without=documentation --jobs 4 --retry 3
+        gem install slather
         bundle exec slather
         bash <(curl -s https://codecov.io/bash) -f xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
       env:
