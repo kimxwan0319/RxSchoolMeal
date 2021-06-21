@@ -52,6 +52,15 @@ extension SchoolMealAPI {
         }
     }
 
+    private var schoolInfo: SchoolInfoModel {
+        let userDefaults = UserDefaults.standard
+        return SchoolInfoModel(
+            ATPT_OFCDC_SC_CODE: userDefaults.string(forKey: "ATPT-OFCDC-SC-CODE") ?? "",
+            SD_SCHUL_CODE: userDefaults.string(forKey: "SD_SCHUL_CODE") ?? "",
+            SCHUL_NM: nil
+        )
+    }
+
     private func encodingQuery(query: String) -> String {
         return query.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? query
     }
