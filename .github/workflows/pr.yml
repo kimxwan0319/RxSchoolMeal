@@ -14,10 +14,13 @@ jobs:
         fetch-depth: 2
     - name: build
       run: swift build
-    - name: test
-      run: |
-        swift package generate-xcodeproj
-        xcodebuild test -scheme RxSchoolMeal-Package -destination \platform="macOS" -enableCodeCoverage YES
-    - name: Upload Codecov report
-      run: |
-        bash <(curl -s https://codecov.io/bash)
+    - name: SwiftPM tests
+      run: swift test --enable-code-coverage
+
+    - name: Convert coverage to lcov
+      run: xcrun llvm-cov export -format="lcov" .build/debug/PersistPackageTests.xctest/Contents/MacOS/PersistPackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
