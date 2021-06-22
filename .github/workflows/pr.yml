@@ -16,7 +16,7 @@ jobs:
       run: swift build
     - name: test
       run: |
-        swift test --enable-code-coverage
+        xcodebuild -scheme RxSchoolMeal-Package -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone Xʀ,OS=13.0' build test
     - name: Upload Codecov report
       run: |
         gem install slather
