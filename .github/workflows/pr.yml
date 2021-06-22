@@ -16,7 +16,7 @@ jobs:
       run: swift build
     - name: test
       run: |
-        swift test --enable-code-coverage
+        swift test --enable-code-coverage -derivedDataPath .build/derivedData
     - name: Upload Codecov report
       run: |
         gem install slather
