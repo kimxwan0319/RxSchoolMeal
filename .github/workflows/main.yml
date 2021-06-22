@@ -24,6 +24,12 @@ jobs:
       run: |
         swift build
         swift test --enable-code-coverage
+    - name: Convert coverage to lcov
+      run: xcrun llvm-cov export -format="lcov" .build/debug/RxSchoolMealPackageTests.xctest/Contents/MacOS/RxSchoolMealPackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true
     - name: Deploy to Cocoapods
       run: |
         set -eo pipefail
@@ -34,9 +40,3 @@ jobs:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
     - name: Deploy to SPM
       run: swift package generate-xcodeproj
-    - name: Upload Codecov report
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: .build/x86_64-apple-macosx/debug/codecov/RxSchoolMeal.json
-        fail_ci_if_error: true
