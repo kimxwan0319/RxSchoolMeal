@@ -1,6 +1,6 @@
 # RxSchoolMeal
 
-[![CI Status](https://img.shields.io/travis/semicolondsmkr/RxSchoolMeal.svg?style=flat)](https://travis-ci.org/semicolondsmkr/RxSchoolMeal)
+![CI](https://github.com/kimxwan0319/RxSchoolMeal/actions/workflows/main.yml/badge.svg)
 [![Version](https://img.shields.io/cocoapods/v/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![License](https://img.shields.io/cocoapods/l/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![Platform](https://img.shields.io/cocoapods/p/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
@@ -13,12 +13,27 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 ## Installation
-
-RxSchoolMeal is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
+### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 ```ruby
-pod 'RxSchoolMeal'
+# Podfile
+use_frameworks!
+
+target 'YOUR_TARGET_NAME' do
+    pod 'RxSchoolMeal', '6.2.0'
+end
+```
+Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
+```
+$ pod install
+```
+
+### Swift Package Manager
+```swift
+// Package.swift
+
+dependencies: [
+    .package(url: "https://github.com/kimxwan0319/RxSchoolMeal", from: "0.1.4")
+]
 ```
 
 ## Author
@@ -28,3 +43,4 @@ semicolondsmkr, kimxwan0319@naver.com
 ## License
 
 RxSchoolMeal is available under the MIT license. See the LICENSE file for more info.
+

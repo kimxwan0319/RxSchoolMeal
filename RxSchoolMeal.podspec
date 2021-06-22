@@ -16,7 +16,9 @@ Pod::Spec.new do |spec|
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
   spec.author           = { 'semicolondsmkr' => 'kimxwan0319@naver.com' }
   spec.source           = { :git => 'https://github.com/kimxwan0319/RxSchoolMeal.git', :tag => spec.version.to_s }
-  spec.ios.deployment_target = '13.0'
+  spec.ios.deployment_target = '12.0'
+  spec.osx.deployment_target = '10.12'
+  spec.watchos.deployment_target = '6.0'
   
   spec.source_files  = 'Sources/RxSchoolMeal/**/*', 'Sources/RxSchoolMeal/*'
 
