@@ -16,11 +16,8 @@ jobs:
       run: swift build
     - name: test
       run: |
-        swift test --enable-code-coverage -derivedDataPath .build/derivedData
+        swift package generate-xcodeproj
+        xcodebuild test -scheme RxSchoolMeal-Package -destination \platform="macOS" -enableCodeCoverage YES
     - name: Upload Codecov report
       run: |
-        gem install slather
-        slather
-        bash <(curl -s https://codecov.io/bash) -f ./xml_report/cobertura.xml -X coveragepy -X gcov -X xcode
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        bash <(curl -s https://codecov.io/bash)
