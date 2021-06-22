@@ -1,6 +1,6 @@
 # RxSchoolMeal
 
-[![CI Status](https://img.shields.io/travis/semicolondsmkr/RxSchoolMeal.svg?style=flat)](https://travis-ci.org/semicolondsmkr/RxSchoolMeal)
+![CI](https://github.com/kimxwan0319/RxSchoolMeal/actions/workflows/main.yml/badge.svg)
 [![Version](https://img.shields.io/cocoapods/v/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![License](https://img.shields.io/cocoapods/l/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![Platform](https://img.shields.io/cocoapods/p/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
