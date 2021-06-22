@@ -16,7 +16,7 @@ jobs:
       run: swift build
     - name: test
       run: |
-        xcodebuild -scheme RxSchoolMeal-Package build test
+        swift test --enable-code-coverage
     - name: Upload Codecov report
       run: |
         gem install slather
