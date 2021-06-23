@@ -5,12 +5,6 @@ import RxSwift
 final class SchoolMealAPITests: XCTestCase {
 
     var disposeBag = DisposeBag()
-
-    override func setUpWithError() throws {
-        let userDefaults = UserDefaults.standard
-        userDefaults.setValue("G10", forKey: "ATPT-OFCDC-SC-CODE")
-        userDefaults.setValue("7430310", forKey: "SD_SCHUL_CODE")
-    }
     
     override func tearDownWithError() throws {
         disposeBag = DisposeBag()
@@ -45,6 +39,9 @@ final class SchoolMealAPITests: XCTestCase {
     }
 
     func testGetSchoolMeal() throws {
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue("G10", forKey: "ATPT-OFCDC-SC-CODE")
+        userDefaults.setValue("7430310", forKey: "SD_SCHUL_CODE")
         let expt = expectation(description: "Waiting done harkWork...")
         HTTPClient.shared.networking(.getMeal(date: .today), MealModel.self)
             .subscribe(onSuccess: { _ in
