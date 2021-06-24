@@ -20,7 +20,7 @@ final class SchoolCommonTests: XCTestCase {
         let schoolName = "대덕소"
         SchoolCommon.initSchool(schoolName: schoolName)
         SchoolCommon.shared.isSet?.subscribe(onSuccess: {
-            XCTAssertTrue(SchoolCommon.shared.schoolName.contains(schoolName))
+            XCTAssertTrue(SchoolCommon.shared.school_information!.SCHUL_NM.contains(schoolName))
             expt.fulfill()
         }, onFailure: { err in
             XCTFail(err.localizedDescription)
@@ -40,7 +40,7 @@ final class SchoolCommonTests: XCTestCase {
         let schoolName = "대덕소"
         SchoolCommon.initSchool(schoolName: schoolName)
         SchoolCommon.shared.isSet?.subscribe(onSuccess: {
-            XCTAssertTrue(SchoolCommon.shared.schoolName.contains(schoolName))
+            XCTAssertTrue(SchoolCommon.shared.school_information!.SCHUL_NM.contains(schoolName))
             expt.fulfill()
         }, onFailure: { err in
             XCTFail(err.localizedDescription)
