@@ -18,13 +18,13 @@ final public class SchoolCommon {
     public static var shared = SchoolCommon()
 
     private var disposeBag = DisposeBag()
-    private var _school_info: SchoolInfoModel?
+
+    /// 학교 정보를 저장하는 프로퍼티 입니다.
+    ///
+    /// 옵셔널 타입이고, 학교정보가 세팅되지 않았을때 `nil`을 반환합니다.
+    private(set) var school_information: SchoolInfoModel?
     /// 학교 정보가 설정되었을때 .success()를 넘겨줄 Single입니다.
     internal var isSet: Single<Void>!
-    /// 학교 이름을 반환합니다.
-    public var schoolName: String {
-        return _school_info?.SCHUL_NM ?? ""
-    }
 
     /**
      앱에 학교를 등록하는 메소드 입니다.
@@ -41,7 +41,7 @@ final public class SchoolCommon {
             // userDefaults에 학교 정보가 저장되어있으면 저장된 정보로 세팅하고 아니다면 API를 호출하여 학교정보를 세팅합니다.
             if self.checkSavedSchoolInfo(schoolName) {
                 let userDefaults = UserDefaults.standard
-                self._school_info = SchoolInfoModel(
+                self.school_information = SchoolInfoModel(
                     ATPT_OFCDC_SC_CODE: userDefaults.string(forKey: "ATPT_OFCDC_SC_CODE")!,
                     SD_SCHUL_CODE: userDefaults.string(forKey: "SD_SCHUL_CODE")!,
                     SCHUL_NM: schoolName
@@ -74,7 +74,7 @@ final public class SchoolCommon {
 
     /// 학교 정보를 저장하는 메서드 입니다.
     private func saveSchoolInfo(schoolInfo: SchoolInfoModel) {
-        self._school_info = schoolInfo
+        self.school_information = schoolInfo
         let userDefaults = UserDefaults.standard
         userDefaults.setValue(schoolInfo.ATPT_OFCDC_SC_CODE, forKey: "ATPT_OFCDC_SC_CODE")
         userDefaults.setValue(schoolInfo.SD_SCHUL_CODE, forKey: "SD_SCHUL_CODE")
