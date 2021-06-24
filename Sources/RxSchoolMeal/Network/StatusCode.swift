@@ -19,7 +19,7 @@ internal enum StatusCode: Error {
 
     /// 500 :: 서버 에러 ⛔️
     case internalServerError
-    
+
     /// ? :: 알수 없는 에러 ⛔️
     case unkown
 
