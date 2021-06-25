@@ -19,7 +19,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RxSchoolMeal', '6.2.0'
+    pod 'RxSchoolMeal', '0.1.5'
 end
 ```
 Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
@@ -27,12 +27,22 @@ Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
 $ pod install
 ```
 
-### Swift Package Manager
+### [Carthage](https://github.com/Carthage/Carthage)
+Add this to `Cartfile`
+
+```
+github "kimxwan0319/RxSchoolMeal" "0.1.5"
+```
+```
+$ carthage update
+```
+
+### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 ```swift
 // Package.swift
 
 dependencies: [
-    .package(url: "https://github.com/kimxwan0319/RxSchoolMeal", from: "0.1.4")
+    .package(url: "https://github.com/kimxwan0319/RxSchoolMeal", from: "0.1.5")
 ]
 ```
 
