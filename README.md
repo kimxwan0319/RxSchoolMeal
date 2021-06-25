@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/kimxwan0319/RxSchoolMeal/actions/workflows/main.yml/badge.svg)
 [![Version](https://img.shields.io/cocoapods/v/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
+![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg?style=flat)
 [![License](https://img.shields.io/cocoapods/l/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![Platform](https://img.shields.io/cocoapods/p/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 [![codecov](https://codecov.io/gh/kimxwan0319/RxSchoolMeal/branch/main/graph/badge.svg?token=KAWST1E1TU)](https://codecov.io/gh/kimxwan0319/RxSchoolMeal)
