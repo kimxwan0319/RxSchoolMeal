@@ -15,8 +15,6 @@ jobs:
     - uses: szenius/set-timezone@v1.0
       with:
         timezoneMacos: "Asia/Seoul"
-    - name: timezone check
-      run: date
     - name: build
       run: swift build
     - name: SwiftPM tests
