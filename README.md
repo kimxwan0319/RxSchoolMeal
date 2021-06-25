@@ -1,6 +1,6 @@
 # RxSchoolMeal
 
-![CI](https://github.com/kimxwan0319/RxSchoolMeal/actions/workflows/main.yml/badge.svg)
+![CI](https://github.com/kimxwan0319/RxSchoolMeal/actions/workflows/main.yml/badge.svg?event=release)
 [![Version](https://img.shields.io/cocoapods/v/RxSchoolMeal.svg?style=flat)](https://cocoapods.org/pods/RxSchoolMeal)
 ![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 ![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-4BC51D.svg?style=flat)
