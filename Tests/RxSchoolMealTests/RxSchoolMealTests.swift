@@ -30,7 +30,7 @@ final class RxSchoolMealTests: XCTestCase {
     )
 
     override func setUpWithError() throws {
-        SchoolCommon.initSchool(schoolName: "대덕소")
+        SchoolCommon.initSchool(schoolName: "대덕소프트웨어마이스터고")
     }
     
     override func tearDownWithError() throws {
