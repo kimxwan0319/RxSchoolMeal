@@ -14,7 +14,7 @@ jobs:
         fetch-depth: 2
     - uses: szenius/set-timezone@v1.0
       with:
-        timezoneMacos: "Asia/Korea"
+        timezoneMacos: "Asia/Seoul"
     - name: timezone check
       run: date
     - name: build
