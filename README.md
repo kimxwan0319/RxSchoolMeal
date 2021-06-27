@@ -49,7 +49,45 @@ MEAL.getMeal(<#날짜#>, timePart: <#식사구분#>).subscribe(onSuccess: { meal
   | `.breakfast` | 아침밥 입니다. |
   | `.lunch`     | 점심밥 입니다. |
   | `.dinner`    | 저녁밥 입니다. |
+ <details><summary><b>Examples</b></summary>
+ <p>
 
+ 아래 세 예제는 모두 오늘의 급식을 조회합니다.
+ ```swift
+ MEAL.getMeal(.today).subscribe(onSuccess: { meal in 
+    print(meal)
+ }, onFailure: { err in
+    print(err)
+ })
+ .disposed(by: disposeBag)
+ ```
+ ```swift
+ MEAL.getMeal(.anotherDate(date: Date())).subscribe(onSuccess: { meal in
+    print(meal)
+ }, onFailure: { err in
+    print(err)
+ })
+ .disposed(by: disposeBag)
+ ```
+ ```swift
+ MEAL.getMeal(.plusMinusDay(day: 0)).subscribe(onSuccess: { meal in
+    print(meal)
+ }, onFailure: { err in
+    print(err)
+ })
+ .disposed(by: disposeBag)
+ ```
+ 아래 예제는 어제의 급식중 점심만 가져오는 예제입니다.
+ ```swift
+ MEAL.getMeal(.plusMinusDay(day: -1), timePart: .lunch).subscribe(onSuccess: { meal in
+    print(meal)
+ }, onFailure: { err in
+    print(err)
+ })
+ .disposed(by: disposeBag)
+ ```
+</p>
+</details>
 
 
 ## Installation
