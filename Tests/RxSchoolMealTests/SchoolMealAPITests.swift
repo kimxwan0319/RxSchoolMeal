@@ -21,12 +21,6 @@ final class SchoolMealAPITests: XCTestCase {
                 switch error as? StatusCode {
                 case .badRequest:
                     XCTFail("400 - badRequest Error")
-                case .unauthorized:
-                    XCTFail("401 - unauthorized Error")
-                case .forbidden:
-                    XCTFail("402 - forbidden Error")
-                case .notFound:
-                    XCTFail("404 - notFound Error")
                 case .internalServerError:
                     XCTFail("500 - internalServerError Error")
                 default:
@@ -51,12 +45,6 @@ final class SchoolMealAPITests: XCTestCase {
                 switch error as? StatusCode {
                 case .badRequest:
                     XCTFail("400 - badRequest Error")
-                case .unauthorized:
-                    XCTFail("401 - unauthorized Error")
-                case .forbidden:
-                    XCTFail("402 - forbidden Error")
-                case .notFound:
-                    XCTFail("404 - notFound Error")
                 case .internalServerError:
                     XCTFail("500 - internalServerError Error")
                 default:

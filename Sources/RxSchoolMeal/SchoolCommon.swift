@@ -56,14 +56,14 @@ final public class SchoolCommon {
                     }, onFailure: { error in
                         switch error as? StatusCode {
                         case .badRequest:
+                            // 없는 학교이름
                             single(.failure(StatusCode.badRequest))
-                            fatalError("RxSchoolMeal :: 없는 학교이름 입니다.")
                         case .internalServerError:
+                            // 서버 오류
                             single(.failure(StatusCode.internalServerError))
-                            fatalError("RxSchoolMeal :: 서버에 문제가 있네요. 죄송합니다ㅠㅠ")
                         default:
+                            // 알 수 없는 에러입니다.
                             single(.failure(StatusCode.unkown))
-                            fatalError("RxSchoolMeal :: 알 수 없는 에러입니다.")
                         }
                     })
                     .disposed(by: self.disposeBag)
