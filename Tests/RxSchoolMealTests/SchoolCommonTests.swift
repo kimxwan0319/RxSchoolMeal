@@ -50,5 +50,21 @@ final class SchoolCommonTests: XCTestCase {
         
         waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    func testCommonError() {
+        let expt = expectation(description: "Waiting done harkWork...")
+        let schoolName = "대마고"
+        SchoolCommon.initSchool(schoolName: schoolName)
+        SchoolCommon.shared.isSet?.subscribe(onSuccess: {
+            XCTFail("있는 학교입니다.")
+            expt.fulfill()
+        }, onFailure: { err in
+            XCTAssertTrue(true)
+            expt.fulfill()
+        })
+        .disposed(by: disposeBag)
+        
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
 
 }
