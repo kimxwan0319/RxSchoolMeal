@@ -65,6 +65,6 @@ extension SchoolMealAPI {
     }
 
     private func encodingQuery(query: String) -> String {
-        return query.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? query
+        return query.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
     }
 }
