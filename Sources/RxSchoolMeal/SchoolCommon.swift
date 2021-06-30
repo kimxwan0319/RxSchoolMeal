@@ -54,17 +54,7 @@ final public class SchoolCommon {
                         self.saveSchoolInfo(schoolInfo: schoolInfo)
                         single(.success(()))
                     }, onFailure: { error in
-                        switch error as? StatusCode {
-                        case .badRequest:
-                            single(.failure(StatusCode.badRequest))
-                            fatalError("RxSchoolMeal :: 없는 학교이름 입니다.")
-                        case .internalServerError:
-                            single(.failure(StatusCode.internalServerError))
-                            fatalError("RxSchoolMeal :: 서버에 문제가 있네요. 죄송합니다ㅠㅠ")
-                        default:
-                            single(.failure(StatusCode.unkown))
-                            fatalError("RxSchoolMeal :: 알 수 없는 에러입니다.")
-                        }
+                        single(.failure(error))
                     })
                     .disposed(by: self.disposeBag)
             }

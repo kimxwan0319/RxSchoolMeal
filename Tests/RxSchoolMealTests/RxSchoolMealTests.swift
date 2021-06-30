@@ -30,7 +30,23 @@ final class RxSchoolMealTests: XCTestCase {
     
     func testGetOneTimeMeal() throws {
         let expt = expectation(description: "Waiting done harkWork...")
+        MEAL.getMeal(.today, timePart: .breakfast).subscribe(onSuccess: { _ in
+            XCTAssertTrue(true)
+            expt.fulfill()
+        }, onFailure: { err in
+            XCTFail(err.localizedDescription)
+            expt.fulfill()
+        })
+        .disposed(by: disposeBag)
         MEAL.getMeal(.today, timePart: .lunch).subscribe(onSuccess: { _ in
+            XCTAssertTrue(true)
+            expt.fulfill()
+        }, onFailure: { err in
+            XCTFail(err.localizedDescription)
+            expt.fulfill()
+        })
+        .disposed(by: disposeBag)
+        MEAL.getMeal(.today, timePart: .dinner).subscribe(onSuccess: { _ in
             XCTAssertTrue(true)
             expt.fulfill()
         }, onFailure: { err in

@@ -21,12 +21,6 @@ final class SchoolMealAPITests: XCTestCase {
                 switch error as? StatusCode {
                 case .badRequest:
                     XCTFail("400 - badRequest Error")
-                case .unauthorized:
-                    XCTFail("401 - unauthorized Error")
-                case .forbidden:
-                    XCTFail("402 - forbidden Error")
-                case .notFound:
-                    XCTFail("404 - notFound Error")
                 case .internalServerError:
                     XCTFail("500 - internalServerError Error")
                 default:
@@ -40,6 +34,7 @@ final class SchoolMealAPITests: XCTestCase {
 
     func testGetSchoolMealApi() throws {
         let userDefaults = UserDefaults.standard
+        userDefaults.setValue("대덕소프트웨어마이스터고", forKey: "SCHUL_NM")
         userDefaults.setValue("G10", forKey: "ATPT-OFCDC-SC-CODE")
         userDefaults.setValue("7430310", forKey: "SD_SCHUL_CODE")
         let expt = expectation(description: "Waiting done harkWork...")
@@ -51,12 +46,6 @@ final class SchoolMealAPITests: XCTestCase {
                 switch error as? StatusCode {
                 case .badRequest:
                     XCTFail("400 - badRequest Error")
-                case .unauthorized:
-                    XCTFail("401 - unauthorized Error")
-                case .forbidden:
-                    XCTFail("402 - forbidden Error")
-                case .notFound:
-                    XCTFail("404 - notFound Error")
                 case .internalServerError:
                     XCTFail("500 - internalServerError Error")
                 default:
@@ -66,6 +55,33 @@ final class SchoolMealAPITests: XCTestCase {
             })
             .disposed(by: disposeBag)
         
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
+    func testCombineModelandApiError() throws {
+        struct strangeModel: Codable {
+            let a: Int
+        }
+        let expt = expectation(description: "Waiting done harkWork...")
+        HTTPClient.shared.networking(.getSchoolInfo(schoolName: "대덕소프트웨어마이스터고"),
+                                     strangeModel.self)
+            .subscribe(onSuccess: { _ in
+                XCTFail("200 - Success")
+                expt.fulfill()
+            }, onFailure: { error in
+                switch error as? StatusCode {
+                case .badRequest:
+                    XCTFail("400 - badRequest Error")
+                case .internalServerError:
+                    XCTFail("500 - internalServerError Error")
+                case .unkown:
+                    XCTFail("Unkown Error")
+                default:
+                    XCTAssertTrue(true)
+                expt.fulfill()
+                }
+            })
+            .disposed(by: disposeBag)
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 

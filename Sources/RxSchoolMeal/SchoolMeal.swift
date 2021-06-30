@@ -21,8 +21,6 @@ public class SchoolMeal {
                     HTTPClient.shared.networking(.getMeal(date: date), MealModel.self)
                         .subscribe(onSuccess: {
                             single(.success($0))
-                        }, onFailure: {
-                            single(.failure($0))
                         })
                         .disposed(by: self.disposeBag)
                     
@@ -52,8 +50,6 @@ public class SchoolMeal {
                             case .dinner:
                                 single(.success($0.dinner))
                             }
-                        }, onFailure: {
-                            single(.failure($0))
                         })
                         .disposed(by: self.disposeBag)
                     

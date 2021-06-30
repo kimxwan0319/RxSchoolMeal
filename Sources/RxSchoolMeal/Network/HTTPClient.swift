@@ -23,9 +23,6 @@ internal class HTTPClient {
                             single(.failure(error))
                         }
                     case 400: single(.failure(StatusCode.badRequest))
-                    case 401: single(.failure(StatusCode.unauthorized))
-                    case 403: single(.failure(StatusCode.forbidden))
-                    case 404: single(.failure(StatusCode.notFound))
                     case 500: single(.failure(StatusCode.internalServerError))
                     default: single(.failure(StatusCode.unkown))
                     }
