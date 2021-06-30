@@ -54,17 +54,7 @@ final public class SchoolCommon {
                         self.saveSchoolInfo(schoolInfo: schoolInfo)
                         single(.success(()))
                     }, onFailure: { error in
-                        switch error as? StatusCode {
-                        case .badRequest:
-                            // 없는 학교이름
-                            single(.failure(StatusCode.badRequest))
-                        case .internalServerError:
-                            // 서버 오류
-                            single(.failure(StatusCode.internalServerError))
-                        default:
-                            // 알 수 없는 에러입니다.
-                            single(.failure(StatusCode.unkown))
-                        }
+                        single(.failure(error))
                     })
                     .disposed(by: self.disposeBag)
             }
