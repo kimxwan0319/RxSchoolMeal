@@ -28,12 +28,13 @@ extension SchoolMealAPI {
     }
 
     public var encoding: ParameterEncoding {
-        switch self.method {
-        case .get:
-            return URLEncoding.queryString
-        default:
-            return JSONEncoding.default
-        }
+        return URLEncoding.queryString
+//        switch self.method {
+//        case .get:
+//            return URLEncoding.queryString
+//        default:
+//            return JSONEncoding.default
+//        }
     }
 
     public var header: HTTPHeaders? {
