@@ -22,7 +22,7 @@ final public class SchoolCommon {
     /// 학교 정보를 저장하는 프로퍼티 입니다.
     ///
     /// 옵셔널 타입이고, 학교정보가 세팅되지 않았을때 `nil`을 반환합니다.
-    private(set) var school_information: SchoolInfoModel?
+    public private(set) var school_information: SchoolInfoModel?
     /// 학교 정보가 설정되었을때 .success()를 넘겨줄 Single입니다.
     internal var isSet: Single<Void>!
 
