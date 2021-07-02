@@ -98,7 +98,7 @@ MEAL.getMeal(<#날짜#>, timePart: <#식사구분#>).subscribe(onSuccess: { meal
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RxSchoolMeal', '0.1.5'
+    pod 'RxSchoolMeal', '1.0.3'
 end
 ```
 Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
@@ -110,7 +110,7 @@ $ pod install
 Add this to `Cartfile`
 
 ```
-github "kimxwan0319/RxSchoolMeal" "0.1.5"
+github "kimxwan0319/RxSchoolMeal" "1.0.3"
 ```
 ```
 $ carthage update
@@ -121,7 +121,7 @@ $ carthage update
 // Package.swift
 
 dependencies: [
-    .package(url: "https://github.com/kimxwan0319/RxSchoolMeal", from: "0.1.5")
+    .package(url: "https://github.com/kimxwan0319/RxSchoolMeal", from: "1.0.3")
 ]
 ```
 
