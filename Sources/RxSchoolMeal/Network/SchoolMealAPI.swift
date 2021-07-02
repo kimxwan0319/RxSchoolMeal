@@ -59,7 +59,7 @@ extension SchoolMealAPI {
     private var schoolInfo: SchoolInfoModel {
         let userDefaults = UserDefaults.standard
         return SchoolInfoModel(
-            ATPT_OFCDC_SC_CODE: userDefaults.string(forKey: "ATPT-OFCDC-SC-CODE") ?? "",
+            ATPT_OFCDC_SC_CODE: userDefaults.string(forKey: "ATPT_OFCDC_SC_CODE") ?? "",
             SD_SCHUL_CODE: userDefaults.string(forKey: "SD_SCHUL_CODE") ?? "",
             SCHUL_NM: userDefaults.string(forKey: "SCHUL_NM") ?? ""
         )

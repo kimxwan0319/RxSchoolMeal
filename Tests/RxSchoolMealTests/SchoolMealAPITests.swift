@@ -35,7 +35,7 @@ final class SchoolMealAPITests: XCTestCase {
     func testGetSchoolMealApi() throws {
         let userDefaults = UserDefaults.standard
         userDefaults.setValue("대덕소프트웨어마이스터고", forKey: "SCHUL_NM")
-        userDefaults.setValue("G10", forKey: "ATPT-OFCDC-SC-CODE")
+        userDefaults.setValue("G10", forKey: "ATPT_OFCDC_SC_CODE")
         userDefaults.setValue("7430310", forKey: "SD_SCHUL_CODE")
         let expt = expectation(description: "Waiting done harkWork...")
         HTTPClient.shared.networking(.getMeal(date: .today), MealModel.self)
