@@ -28,7 +28,7 @@ final class RxSchoolMealTests: XCTestCase {
         waitForExpectations(timeout: 5.0, handler: nil)
     }
     
-    func testGetOneTimeMeal() throws {
+    func testGetBreakfast() throws {
         let expt = expectation(description: "Waiting done harkWork...")
         MEAL.getMeal(.today, timePart: .breakfast).subscribe(onSuccess: { _ in
             XCTAssertTrue(true)
@@ -38,6 +38,11 @@ final class RxSchoolMealTests: XCTestCase {
             expt.fulfill()
         })
         .disposed(by: disposeBag)
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
+    func testGetLunch() throws {
+        let expt = expectation(description: "Waiting done harkWork...")
         MEAL.getMeal(.today, timePart: .lunch).subscribe(onSuccess: { _ in
             XCTAssertTrue(true)
             expt.fulfill()
@@ -46,6 +51,11 @@ final class RxSchoolMealTests: XCTestCase {
             expt.fulfill()
         })
         .disposed(by: disposeBag)
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
+    func testGetDinner() throws {
+        let expt = expectation(description: "Waiting done harkWork...")
         MEAL.getMeal(.today, timePart: .dinner).subscribe(onSuccess: { _ in
             XCTAssertTrue(true)
             expt.fulfill()
